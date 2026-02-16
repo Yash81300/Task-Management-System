@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="css/style.css?v=2.2">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" style="display: none;">
+        <div class="nav-content">
+            <h1>📋 Task Manager</h1>
+            <div class="nav-user">
+                <span id="userName"></span>
+                <button onclick="logout()" class="btn btn-secondary btn-small">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div id="app"></div>
+
+    <!-- Scripts -->
+    <script src="js/config.js?v=2.2"></script>
+    <script src="js/auth.js?v=2.2"></script>
+    <script src="js/api.js?v=2.2"></script>
+    <script src="js/ui.js?v=2.2"></script>
+    <script src="js/app.js?v=2.2"></script>
+</body>
+</html>
