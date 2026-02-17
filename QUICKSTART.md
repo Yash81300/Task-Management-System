@@ -15,6 +15,17 @@ Get your application running in **5 minutes**!
 ```bash
 cd backend
 
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# You should see (venv) at the start of your terminal prompt
+
 # Install dependencies
 pip install -r requirements.txt
 
@@ -29,9 +40,17 @@ uvicorn main:app --reload --port 8000
 ✅ **Backend running at: http://localhost:8000**  
 📚 **API Docs at: http://localhost:8000/docs**
 
+> ⚠️ **Every time you open a new terminal**, you must activate the venv again before starting the server:
+> ```bash
+> cd backend
+> venv\Scripts\activate   # Windows
+> source venv/bin/activate  # Mac/Linux
+> uvicorn main:app --reload --port 8000
+> ```
+
 ### Step 2: Frontend Setup (1 minute)
 
-Open new terminal:
+Open a **new terminal** (keep the backend terminal running):
 
 ```bash
 cd frontend
@@ -87,6 +106,14 @@ python -m http.server 3000
 
 ## 🐛 Quick Fixes
 
+### Virtual Environment Not Activating? (Windows)
+
+If you see _"cannot be loaded because running scripts is disabled"_, run this once in PowerShell:
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+Then try activating again.
+
 ### MongoDB Not Running?
 
 **Windows:**
@@ -125,6 +152,7 @@ Check:
 1. Backend is on port 8000
 2. Frontend is on port 3000
 3. Both are running
+4. Virtual environment is activated when running the backend
 
 ## 📊 Test Data
 
@@ -156,6 +184,7 @@ Role: admin
 
 ## 💡 Pro Tips
 
+- **Always activate venv** before starting the backend (`venv\Scripts\activate`)
 - **Use Swagger UI** for API testing (http://localhost:8000/docs)
 - **Check Browser Console** (F12) for frontend errors
 - **Check Terminal** for backend errors
@@ -163,6 +192,7 @@ Role: admin
 
 ## ✅ Success Checklist
 
+- [ ] Virtual environment created and activated
 - [ ] Backend starts without errors
 - [ ] Frontend opens in browser
 - [ ] Can register new user
@@ -176,9 +206,10 @@ Role: admin
 ## 🆘 Still Having Issues?
 
 1. Check full [README.md](README.md) for detailed troubleshooting
-2. Verify all prerequisites are installed
-3. Make sure MongoDB is running
-4. Check both terminal outputs for errors
+2. Make sure you see `(venv)` in your terminal before starting the backend
+3. Verify all prerequisites are installed
+4. Make sure MongoDB is running
+5. Check both terminal outputs for errors
 
 ---
 
